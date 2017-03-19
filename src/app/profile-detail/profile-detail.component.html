@@ -1,3 +1,22 @@
-<p>
-  profile-detail works!
-</p>
+<div *ngIf="profile">
+<md-card>
+  <md-card-header>
+    <md-card-title>Edit {{profile.name}}</md-card-title>
+    <md-card-subtitle>Change Individual and Master Brightness</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+  <br>  Master Brightness
+   <md-slider class="slider"></md-slider> 
+   white
+   <md-slider class="slider"></md-slider> 
+   red
+   <md-slider class="slider"></md-slider> 
+   green
+   <md-slider class="slider"></md-slider> 
+   blue
+   <md-slider class="slider"></md-slider> 
+  </md-card-content>
+</md-card>
+<br>
+</div>
+<button md-raised-button (click)="goBack()">Go Back</button>

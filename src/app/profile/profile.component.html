@@ -11,9 +11,12 @@
           <span class="profile">
            <md-radio-button value="{{index}}">{{profile.name}}</md-radio-button>
           </span>
-          <span class="edit-button">
-           <md-icon >edit</md-icon>
-          </span>
+          <button 
+            md-icon-button 
+            class="edit-button" 
+            [routerLink]="['/detail', profile.id]">
+            <md-icon >edit</md-icon>
+          </button>
         </md-list-item>
       </md-list>
     </md-radio-group>

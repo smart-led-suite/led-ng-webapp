@@ -11,6 +11,10 @@ export class ProfileService {
   getProfiles(): Promise<Profile[]> {
     return Promise.resolve(PROFILES);
   }
+    getProfile(id: number): Promise<Profile> {
+        return this.getProfiles()
+                   .then(profiles => profiles.find(profile => profile.id === id));
+    }
   //individual profile getter soon to be implemented
 
 }
