@@ -1,10 +1,8 @@
-<md-card>
-  <md-card-header>
-    <md-card-title>Profile List</md-card-title>
-    <md-card-subtitle>View and Activate Profiles</md-card-subtitle>
-  </md-card-header>
-  <md-card-content>
-    <md-radio-group>
+
+    <h4>Profile List <br>
+    <small>View and Activate Profiles</small>
+  </h4> 
+    <md-radio-group value="{{selectedProfileId}}">
       <md-list>
         <md-list-item 
           *ngFor="let profile of profiles; let index = index">
@@ -20,5 +18,3 @@
         </md-list-item>
       </md-list>
     </md-radio-group>
-  </md-card-content>
-</md-card>

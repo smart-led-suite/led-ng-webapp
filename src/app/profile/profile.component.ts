@@ -10,14 +10,12 @@ import { ProfileService } from '../profile.service';
 })
 export class ProfileComponent implements OnInit {
   profiles: Profile[];
-  selectedProfile: Profile;
+  selectedProfileId: number;
 
   constructor(
     private profileService: ProfileService,
   ) { 
-    console.log('hey the profile got constructed');
-
-    
+    console.log('hey the profile got constructed');    
   }
 
   ngOnInit() {
@@ -25,7 +23,9 @@ export class ProfileComponent implements OnInit {
   }
 
   getProfiles(): void {
-    this.profileService.getProfiles().then(profiles => this.profiles = profiles);
+    this.profileService.getProfiles().then(profiles => {
+      this.profiles = profiles;
+      this.selectedProfileId = 0;      
+    });
   }
-
 }
