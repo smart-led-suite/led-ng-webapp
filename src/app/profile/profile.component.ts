@@ -14,9 +14,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private profileService: ProfileService,
-  ) { 
-    console.log('hey the profile got constructed');    
-  }
+  ) {   }
 
   ngOnInit() {
     this.getProfiles();

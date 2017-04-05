@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MaterialModule } from '@angular/material';
+import { RouterTestingModule } from '@angular/router/testing/';
 
 import { ProfileDetailComponent } from './profile-detail.component';
+import { Profile } from '../profile';
+import { ProfileService } from '../profile.service';
 
 describe('ProfileDetailComponent', () => {
   let component: ProfileDetailComponent;
@@ -8,7 +12,9 @@ describe('ProfileDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileDetailComponent ]
+      declarations: [ ProfileDetailComponent ],
+      providers: [ ProfileService ],
+      imports: [ MaterialModule, RouterTestingModule ]
     })
     .compileComponents();
   }));
@@ -19,7 +25,7 @@ describe('ProfileDetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create ProfileDetailComponent', () => {
     expect(component).toBeTruthy();
   });
 });
