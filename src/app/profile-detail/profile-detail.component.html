@@ -1,20 +1,14 @@
 <div *ngIf="profile">
-  <md-card-header>
-    <md-card-title>Edit {{profile.name}}</md-card-title>
-    <md-card-subtitle>Change Individual and Master Brightness</md-card-subtitle>
-  </md-card-header>
-  <md-card-content>
-  <br>  Master Brightness
-   <md-slider class="slider"></md-slider> 
-   white
-   <md-slider class="slider"></md-slider> 
-   red
-   <md-slider class="slider"></md-slider> 
-   green
-   <md-slider class="slider"></md-slider> 
-   blue
-   <md-slider class="slider"></md-slider> 
-  </md-card-content>
+    <h4>Edit {{profile.name}} <br>
+    <small>Change Individual and Master Brightness</small>
+    </h4>
+  <md-list>
+     <md-list-item 
+          *ngFor="let led of leds; let index = index">
+         {{led.name}}
+        <md-slider [(value)]="profile.brightness[led.id]" (change)="sliderChange(led)"class="slider"></md-slider> 
+     </md-list-item> 
+  </md-list>
 <br>
 </div>
-<button md-raised-button (click)="goBack()">Go Back</button>
+<button md-raised-button  (click)="goBack()">Go Back</button>
