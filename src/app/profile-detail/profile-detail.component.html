@@ -6,10 +6,9 @@
      <md-list-item 
           *ngFor="let led of leds; let index = index">
          {{led.name}}
-        <md-slider [(value)]="led.brightness" (change)="sliderChange(led)"class="slider"></md-slider> 
+        <md-slider [(value)]="profile.brightness[led.id]" (change)="sliderChange(led)"class="slider"></md-slider> 
      </md-list-item> 
   </md-list>
 <br>
 </div>
 <button md-raised-button  (click)="goBack()">Go Back</button>
-{{leds[0].name}}

@@ -58,7 +58,7 @@ export class ProfileDetailComponent implements OnInit {
   }
   sliderChange(led: Led): void {
     console.log(led.name);
-    console.log(led.brightness);
+    console.log(this.profile.brightness[led.id]);
     
   }
 }
